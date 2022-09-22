@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+export DEB_LDFLAGS_MAINT_APPEND=-Wl,--as-needed -Wl,-O1 -Wl,-z,defs
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all
+
+%:
+	dh $@
+
+override_dh_install:
+	rm -f debian/tmp/usr/lib/*/*.la
+	# Provide compatibility symlink for a while; upstream added -2.0 for 2.0.2
+	ln -s libusbmuxd-2.0.so.6 debian/tmp/usr/lib/$(DEB_TARGET_MULTIARCH)/libusbmuxd.so.6
+	ln -s libusbmuxd-2.0.so.6.0.0 debian/tmp/usr/lib/$(DEB_TARGET_MULTIARCH)/libusbmuxd.so.6.0.0
+	ln -s libusbmuxd-2.0.so debian/tmp/usr/lib/$(DEB_TARGET_MULTIARCH)/libusbmuxd.so
+	ln -s libusbmuxd-2.0.a debian/tmp/usr/lib/$(DEB_TARGET_MULTIARCH)/libusbmuxd.a
+	ln -s libusbmuxd-2.0.pc debian/tmp/usr/lib/$(DEB_TARGET_MULTIARCH)/pkgconfig/libusbmuxd.pc
+	dh_install
+
+override_dh_missing:
+	dh_missing --fail-missing
+
+override_dh_makeshlibs:
+	dh_makeshlibs -- -c4

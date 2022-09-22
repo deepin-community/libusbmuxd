@@ -1,0 +1,52 @@
+Source: libusbmuxd
+Priority: optional
+Maintainer: gtkpod Maintainers <pkg-gtkpod-devel@lists.alioth.debian.org>
+Uploaders: Chow Loong Jin <hyperair@debian.org>,
+           Yves-Alexis Perez <corsac@debian.org>
+Build-Depends: debhelper-compat (= 12), libplist-dev (>= 2.2), pkg-config
+Standards-Version: 4.5.0
+Section: libs
+Homepage: https://libimobiledevice.org
+Vcs-Git: https://salsa.debian.org/imobiledevice-team/libusbmuxd.git
+Vcs-Browser: https://salsa.debian.org/imobiledevice-team/libusbmuxd
+
+Package: libusbmuxd-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libplist-dev (>= 2.2.0),
+         libusbmuxd6 (= ${binary:Version}),
+         ${misc:Depends}
+Description: USB multiplexor daemon for iPhone and iPod Touch devices - devel
+ usbmuxd, the USB multiplexor daemon, is in charge of coordinating
+ access to iPhone and iPod Touch services over USB. Synchronization and
+ management applications for the iPhone and iPod Touch need this daemon
+ to communicate with such devices concurrently.
+ .
+ This package contains the development files.
+
+Package: libusbmuxd6
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Breaks: usbmuxd (<< 1.1.1~git20181007.f838cf6-1)
+Description: USB multiplexor daemon for iPhone and iPod Touch devices - library
+ usbmuxd, the USB multiplexor daemon, is in charge of coordinating
+ access to iPhone and iPod Touch services over USB. Synchronization and
+ management applications for the iPhone and iPod Touch need this daemon
+ to communicate with such devices concurrently.
+ .
+ This package contains the shared library.
+
+Package: libusbmuxd-tools
+Section: utils
+Architecture: any
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: USB multiplexor daemon for iPhone and iPod Touch devices - tools
+ usbmuxd, the USB multiplexor daemon, is in charge of coordinating
+ access to iPhone and iPod Touch services over USB. Synchronization and
+ management applications for the iPhone and iPod Touch need this daemon
+ to communicate with such devices concurrently.
+ .
+ This package contains the iproxy tool that enables TCP access to iOS devices.

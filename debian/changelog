@@ -1,0 +1,129 @@
+libusbmuxd (2.0.2-3) unstable; urgency=medium
+
+  * Upload to unstable
+  * d/control: add dep on libplist-dev to the -dev package
+  * run wrap-and-sort
+  * d/control: drop obsolete replace against older usbmuxd
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Tue, 23 Jun 2020 11:46:28 +0200
+
+libusbmuxd (2.0.2-2) experimental; urgency=medium
+
+  * d/rules: also ship a symlink for the pkgconfig file
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Wed, 17 Jun 2020 13:09:35 +0200
+
+libusbmuxd (2.0.2-1) experimental; urgency=medium
+
+  [ Debian Janitor ]
+  * Use secure copyright file specification URI.
+  * Bump debhelper from old 11 to 12.
+  * Update standards version to 4.5.0, no changes needed.
+
+  [ Yves-Alexis Perez ]
+  * New upstream release
+  * d/libusbmuxd-tools.install: install new manpages
+  * d/libusbmuxd6.symbols: update symbols file following name change
+  * d/libusbmuxd6.lintian-overrides: add override for package name
+  * d/rules: ship some compatibility symlinks for the non versioned library name
+  * d/control: bump libplist build-dep to 2.2
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Tue, 16 Jun 2020 11:36:11 +0200
+
+libusbmuxd (2.0.1-2) unstable; urgency=medium
+
+  * d/control: update libplist build-dep
+  * d/copyright updated
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Fri, 29 Nov 2019 21:47:04 +0100
+
+libusbmuxd (2.0.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * d/rules: drop rename of icat, it's now inetcat
+  * d/gbp.conf: add upstream tag format now that we have releases
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Wed, 27 Nov 2019 12:50:33 +0100
+
+libusbmuxd (2.0.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * d/control: bump libplist-dev b-dep to 2.0
+  * rename package to libusbmux6 following soname change
+  * d/control: update standards version to 4.4.1
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Fri, 22 Nov 2019 18:32:04 +0100
+
+libusbmuxd (1.1.0~git20190924.b097ea3-2) unstable; urgency=medium
+
+  * d/rules: rename icat to icat-usbmuxd (Closes: #941201)
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sat, 28 Sep 2019 16:51:23 +0200
+
+libusbmuxd (1.1.0~git20190924.b097ea3-1) unstable; urgency=medium
+
+  * New upstream snapshot.
+  * d/docs: rename README to README.md
+  * d/libusbmuxd4.symbols updated for new release
+  * d/control: update standards version to 4.4.0
+  * use debhelper-compat b-dep for dh compat level
+  * d/control: update dh compat level to 11
+  * d/rules: drop dbgsym migration snippet
+  * d/rules: use dh_missing override
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Tue, 24 Sep 2019 10:22:57 +0200
+
+libusbmuxd (1.1.0~git20181007.07a493a-1) unstable; urgency=medium
+
+  * New upstream snapshot
+  * d/gbp.conf updated for DEP-14
+  * d/libusbmuxd4.symbols updated for new snapshot
+  * d/control: remove duplicate section
+  * d/control: update Vcs url to salsa
+  * d/control: add myself to Uploaders
+  * d/control: update standards version to 4.2.1
+  * update dh compat to 10
+  * d/watch: use HTTPS protocol
+  * d/rules: enable all hardening options
+  * remove unused lintian overrides
+  * d/control: update Homepage
+  * d/copyright updated for new paths
+  * d/control: update breaks against usbmuxd due to new symbol
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Mon, 08 Oct 2018 22:16:52 +0200
+
+libusbmuxd (1.1.0~git20171206.c724e70f-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * d/gbp.conf added
+  * New upstream version 1.1.0~git20171206.c724e70f
+  * d/control: update standards version to 4.1.2.
+  * migrate to dbgsym package
+  * d/rules: enable all hardening flags
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Wed, 06 Dec 2017 16:27:14 +0100
+
+libusbmuxd (1.0.10-2) unstable; urgency=medium
+
+  * Reupload to unstable
+
+ -- Chow Loong Jin <hyperair@debian.org>  Mon, 04 Jan 2016 17:36:43 +0800
+
+libusbmuxd (1.0.10-1) experimental; urgency=medium
+
+  * [2983215] Update replaces: usbmuxd version on libusbmuxd-tools
+    (Closes: #743605)
+  * [37c03e4] Add watch file
+  * [2df3d1c] Imported Upstream version 1.0.10
+  * [4f8f920] Drop patches.
+    Applied upstream.
+  * [49e487b] Rename package for ABI bump
+  * [9eb00f1] No-change bump of Standards-Version to 3.9.6
+
+ -- Chow Loong Jin <hyperair@debian.org>  Sun, 15 Feb 2015 01:57:00 +0800
+
+libusbmuxd (1.0.9-1) unstable; urgency=low
+
+  * Initial release (split off from usbmuxd)
+
+ -- Chow Loong Jin <hyperair@debian.org>  Sun, 23 Mar 2014 03:20:25 +0800
